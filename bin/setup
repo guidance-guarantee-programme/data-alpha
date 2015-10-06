@@ -1,0 +1,20 @@
+#!/usr/bin/env jruby
+
+require 'pathname'
+
+APP_ROOT = Pathname.new File.expand_path('../../', __FILE__)
+
+Dir.chdir APP_ROOT do
+  puts '== Installing dependencies =='
+  system 'gem install bundler --conservative'
+  system './bin/bundle check || ./bin/bundle install'
+
+  puts "\n== Preparing database =="
+  system './bin/rake db:setup'
+
+  puts "\n== Clearing session, cache, and socket files from tmp/ =="
+  system './bin/rake tmp:clear'
+
+  puts "\n== Truncating all *.log files in log/ to zero bytes =="
+  system './bin/rake log:clear'
+end
