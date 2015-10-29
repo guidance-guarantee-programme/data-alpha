@@ -6,3 +6,7 @@ end_date = Date.today
 (begin_date..end_date).each do |date|
   DateDimension.create_from_date(date)
 end
+
+ChannelDimension.create(name: 'Website')
+ChannelDimension.create(name: 'Phone')
+ChannelDimension.create(name: 'Face-to-face')
