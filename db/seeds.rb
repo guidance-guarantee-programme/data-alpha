@@ -1,7 +1,8 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
+require 'date'
+
+begin_date = Date.parse('2015-01-01')
+end_date = Date.today
+
+(begin_date..end_date).each do |date|
+  DateDimension.create_from_date(date)
+end

@@ -11,9 +11,40 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 20151028150240) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "date_dimensions", force: :cascade do |t|
+    t.string  "date",                           limit: 255, null: false
+    t.string  "date_name",                      limit: 255, null: false
+    t.integer "day",                                        null: false
+    t.integer "month",                                      null: false
+    t.integer "year",                                       null: false
+    t.integer "day_of_week",                                null: false
+    t.integer "day_of_month",                               null: false
+    t.integer "day_of_year",                                null: false
+    t.integer "calendar_week",                              null: false
+    t.integer "calendar_week_day",                          null: false
+    t.integer "calendar_week_year",                         null: false
+    t.string  "weekday",                        limit: 255, null: false
+    t.string  "weekday_abbreviated",            limit: 255, null: false
+    t.string  "month_name",                     limit: 255, null: false
+    t.string  "month_name_abbreviated",         limit: 255, null: false
+    t.string  "weekday_weekend",                limit: 255, null: false
+    t.string  "is_last_day_of_month",           limit: 255, null: false
+    t.integer "quarter",                                    null: false
+    t.string  "quarter_name",                   limit: 255, null: false
+    t.string  "year_month",                     limit: 255, null: false
+    t.string  "year_quarter",                   limit: 255, null: false
+    t.string  "bank_holiday",                   limit: 255
+    t.string  "england_and_wales_bank_holiday", limit: 255
+    t.string  "scotland_bank_holiday",          limit: 255
+    t.string  "northern_ireland_bank_holiday",  limit: 255
+  end
+
+  add_index "date_dimensions", ["date"], name: "index_date_dimensions_on_date", unique: true, using: :btree
+  add_index "date_dimensions", ["date_name"], name: "index_date_dimensions_on_date_name", unique: true, using: :btree
 
 end
