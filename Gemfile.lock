@@ -66,6 +66,8 @@ GEM
     mime-types (2.6.2)
     mini_portile (0.6.2)
     minitest (5.8.1)
+    mondrian-olap (0.6.0)
+      nokogiri
     multipart-post (2.0.0)
     nokogiri (1.6.6.2)
       mini_portile (~> 0.6.0)
@@ -146,6 +148,8 @@ DEPENDENCIES
   faraday
   foreman
   icalendar
+  jdbc-postgres
+  mondrian-olap
   pry-rails
   rails (= 4.2.4)
   sass-rails (~> 5.0)

@@ -34,6 +34,12 @@ To start the application:
 $ ./bin/foreman s
 ```
 
+
+## Reference
+
+* [Mondrian Documentation](http://mondrian.pentaho.com/documentation/)
+
+
 ## Contributing
 
 Please see the [contributing guidelines](/CONTRIBUTING.md).
