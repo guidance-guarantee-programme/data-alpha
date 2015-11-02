@@ -1,0 +1,52 @@
+<div class="page-header">
+  <h1>New query</h1>
+</div>
+
+<form method="get">
+  <div class="form-group">
+    <textarea name="query" rows="5" class="form-control"><%= @query %></textarea>
+  </div>
+  <div class="form-group">
+    <input type="submit" class="btn-success btn-lg"/>
+  </div>
+</form>
+
+
+<% if @results %>
+    <table class="table table-bordered">
+      <thead>
+
+      <% if @results.axes_count == 2 %>
+          <th class="table-header"></th>
+      <% end %>
+
+
+      <% @results.column_full_names.each do |column_full_name| %>
+          <th class="table-header"><%= column_full_name %></th>
+      <% end %>
+
+      </thead>
+      <tbody>
+
+      <% @results.formatted_values.each_with_index do |row, index| %>
+          <tr>
+            <% if @results.axes_count == 2 %>
+                <th class="table-header-secondary">
+                  <%= @results.row_full_names[index] %>
+                </th>
+                <% row.each do |cell| %>
+                    <td>
+                      <%= cell %>
+                    </td>
+                <% end %>
+            <% else %>
+                <td>
+                  <%= row %>
+                </td>
+            <% end %>
+          </tr>
+      <% end %>
+
+      </tbody>
+    </table>
+<% end %>
