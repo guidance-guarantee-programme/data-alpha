@@ -19,3 +19,7 @@ gem 'tzinfo-data', platforms: %i(mingw mswin x64_mingw jruby)
 group :development, :test do
   gem 'pry-rails'
 end
+
+group :production do
+  gem 'rails_12factor'
+end
