@@ -1,1 +1,1 @@
-web: jruby -S ./bin/rails server
+web: ./bin/rails server -p $PORT -e $RACK_ENV
