@@ -1,0 +1,18 @@
+{
+  "name": "data",
+  "homepage": "https://github.com/guidance-guarantee-programme/data",
+  "authors": [
+    "Andrew Garner <andrew@surefirething.co.uk> (https://www.surefirething.co.uk)"
+  ],
+  "description": "Reporting and data analysis for Pension Wise.",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "vendor/assets/bower_components"
+  ],
+  "dependencies": {
+    "highcharts-release": "~4.1.9"
+  }
+}

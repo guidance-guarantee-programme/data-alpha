@@ -1,0 +1,9 @@
+{
+  "name": "data",
+  "dependencies": {
+    "bower": "*"
+  },
+  "scripts": {
+    "postinstall": "./node_modules/.bin/bower install"
+  }
+}
