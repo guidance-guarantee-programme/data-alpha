@@ -8,6 +8,6 @@ class QueriesController < ApplicationController
   private
 
   def olap_connection
-    @olap ||= Rails.application.config.olap_connection
+    @olap ||= Rails.application.config.olap_connection.call
   end
 end
